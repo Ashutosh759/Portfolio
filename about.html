@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Ashutosh Jha</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="floating-shapes home-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <nav>
+        <div class="nav-content">
+            <div class="nav-left">
+                <a href="/" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="about-page">
+        <div class="image-grid">
+            <img src="/photo/Coding Setup.jpg" alt="Coding setup" class="grid-image">
+            <img src="/photo/Ashutosh.jpeg" alt="Nature exploration" class="grid-image center">
+            <img src="/photo/City View.jpg" alt="City view" class="grid-image">
+        </div>
+
+        <h1 class="gradient-text">Hi again, I'm Ashutosh.</h1>
+
+        <div class="about-content">
+            <p>
+                I'm a software engineer based in Navi Mumbai, passionate about building innovative solutions 
+                that make a difference. With a strong foundation in full-stack development and AI technologies, 
+                I create applications that combine cutting-edge technology with intuitive user experiences.
+            </p>
+
+            <p>
+                My journey in tech began with web development, where I learned the fundamentals of creating 
+                user-centric applications. Over time, I've expanded into machine learning and AI, always 
+                focusing on how technology can solve real-world problems effectively.
+            </p>
+
+            <p>
+                As an engineer, I believe in the power of clean code and thoughtful system design. I enjoy 
+                working on projects that challenge me to learn new technologies and approaches, always 
+                striving to create solutions that are both elegant and efficient.
+            </p>
+
+            <p>
+                Outside of coding, I'm an avid reader and technology enthusiast. I spend my time exploring 
+                new technologies, contributing to open-source projects, and occasionally writing about my 
+                experiences in tech. I'm also passionate about mentoring and sharing knowledge with the 
+                developer community.
+            </p>
+
+            <p>
+                If you'd like to discuss potential collaborations or just want to chat about technology, 
+                feel free to <a href="#contact" class="reach-out">reach out</a>.
+            </p>
+        </div>
+
+        <section id="contact" class="contact-section">
+            <h2 class="gradient-text">Get in Touch</h2>
+            <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Your message here..." rows="5"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/Ashutosh759" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ashutosh-jha-b5037331a/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/yourusername" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        <p class="copyright">© 2024 Ashutosh Jha. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const themeIcon = themeToggle.querySelector('i');
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+    </script>
+</body>
+</html> 

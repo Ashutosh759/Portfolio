@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Ashutosh Jha</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="floating-shapes home-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+
+    <nav>
+        <div class="nav-content">
+            <div class="nav-left">
+                <a href="/" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </div>
+            <div class="nav-right">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="gallery-page">
+        <h1 class="gradient-text">Photography</h1>
+        
+        <div class="gallery-item large">
+            <img src="/photo/Group.jpeg" alt="Group Photo 1" loading="lazy">
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="photo/Bihar.jpg" alt="Technology" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/photo/Ashutosh.jpeg" alt="Urban" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/Avi.jpeg" alt="Coffee" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/photo/Kerala3.jpg" alt="Desk" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/photo/Rajasthan.jpg" alt="City View" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/photo/Kavya.jpeg" alt="Workspace" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/photo/Disha.jpeg" alt="Nature" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/UP1.jpg" alt="Architecture" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/Kerala1.jpg" alt="Laptop" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/photo/Sayuj.jpeg" alt="Modern Workspace" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/photo/Vamshi.jpeg" alt="Nature" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/Kerala2.jpg" alt="Minimal" loading="lazy">
+            </div>
+            
+            <div class="gallery-item">
+                <img src="/photo/Kishan.jpeg" alt="Code" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/Kanishk.jpeg" alt="Design" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="/photo/Naaz.jpeg" alt="Creative" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="photo/Prity.jpeg" alt="Creative" loading="lazy">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/Ashutosh759" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/ashutosh-jha-b5037331a/" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://twitter.com/yourusername" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        <p class="copyright">© 2024 Ashutosh Jha. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const themeIcon = themeToggle.querySelector('i');
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            themeIcon.className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
+        }
+    </script>
+</body>
+</html> 
